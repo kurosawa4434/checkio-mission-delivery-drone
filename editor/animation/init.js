@@ -255,7 +255,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
 
         var $tryit;
         var io = new extIO({
-            multipleArguments: true,
+            multipleArguments: false,
             functions: {
                 python: 'delivery_drone',
                 js: 'deliveryDrone'
