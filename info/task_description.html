@@ -1,0 +1,55 @@
+<!-- Describe task in general -->
+
+<p>
+Today drones working in transportation.
+Let's plan efficient drone movement.
+</p>
+
+<p>
+The input value is a list of integers.
+One or more number of this represent the existence of the package to be transported and its destination
+You have to return the shortest moving distance for the drone to complete all transportation as an integer.
+</p>
+
+<ul>
+    <li>Note:</li>
+    <ul>
+        <li>The drone is initially at position 0 (most left).</li>
+        <li>The drone can carry only one package at a time.</li>
+        <li>You can only drop a package on destination.</li>
+    </ul>
+</ul>
+
+<!-- Put some usage examples -->
+<div class="for_info_only">
+<p>
+	<strong>Examples:</strong>
+</p>
+
+<pre class="brush: python">
+delivery_drone([0, 2, 0]) == 2
+delivery_drone([0, 0, 1, 2]) == 5
+</pre>
+<img src='{{MEDIA}}delivery_drone_example.png' title='example'>
+</div>
+
+<!-- Explain input and output values -->
+<p>
+	<strong>Input:</strong>
+The information of packages (a list of integer).
+</p>
+
+<p>
+	<strong>Output:</strong>
+The shortest moving distance (a integer).
+</p>
+
+
+
+<p>
+	<strong>Preconditions:</strong>
+<ul>
+	<li>3 &le; len(input) &le; 50</li>
+	<li>all(i &lt; len(input) for i in input)</li>
+</ul>
+</p>
