@@ -165,8 +165,8 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             }
 
             const unit = number_line_length / points
-            const lift_speed = 400
-            const move_speed = 300
+            const lift_speed = 200
+            const move_speed = 800
 
             function transporting() {
 
@@ -238,14 +238,14 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                             {'transform': "t " + ((explanation[i]
                                 - explanation[i-1])*unit)
                                 + "," + (-1 * lifting_height)},
-                            move_speed*Math.abs(explanation[i]
-                                - (explanation[i-1] || 0)))
+                            move_speed*(Math.abs(explanation[i]
+                                - (explanation[i-1] || 0)))/(points+1))
                     }
 
                     drone_icon.animate(
                         {'transform': "t " + explanation[i]*unit + "," + 0},
                         move_speed*Math.abs(explanation[i]
-                            - (explanation[i-1] || 0)), down)
+                            - (explanation[i-1] || 0))/(points+1), down)
 
                 })()
             }
