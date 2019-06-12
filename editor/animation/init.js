@@ -20,7 +20,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const points = input.length-1
             const scale = Math.min(1, 10/(points+1))
             const max_width = 350
-            const paper = Raphael(dom, 350, 100, 0, 0);
+            const paper = Raphael(dom, 350, 100*scale+8, 0, 0);
 
             /*----------------------------------------------*
              *
