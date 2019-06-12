@@ -17,6 +17,7 @@ You have to return the shortest moving distance for the drone to complete all tr
         <li>The drone is initially at position 0 (most left).</li>
         <li>The drone can carry only one package at a time.</li>
         <li>You can only drop a package on destination.</li>
+        <li>The drone finally <strong>returns</strong> to position 0.</li>
     </ul>
 </ul>
 
@@ -27,8 +28,8 @@ You have to return the shortest moving distance for the drone to complete all tr
 </p>
 
 <pre class="brush: python">
-delivery_drone([0, 2, 0]) == 2
-delivery_drone([0, 0, 1, 2]) == 5
+delivery_drone([0, 2, 0]) == 4
+delivery_drone([0, 0, 1, 2]) == 6
 </pre>
 <img src='{{MEDIA}}delivery_drone_example.png' title='example'>
 </div>
@@ -41,7 +42,7 @@ The information of packages (a list of integer).
 
 <p>
 	<strong>Output:</strong>
-The shortest moving distance (a integer).
+The shortest moving distance (an integer).
 </p>
 
 
@@ -49,7 +50,7 @@ The shortest moving distance (a integer).
 <p>
 	<strong>Preconditions:</strong>
 <ul>
-	<li>3 &le; len(input) &le; 50</li>
-	<li>all(i &lt; len(input) for i in input)</li>
+	<li>3 &le; len(input) &le; 30</li>
+	<li>1 &le; number of packages &le; 9</li>
 </ul>
 </p>

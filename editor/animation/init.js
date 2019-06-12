@@ -30,7 +30,8 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const attr = {
                 rect: {
                     'fill': 'black',
-                    'stroke-width': '0px',
+                    'stroke': '#DFE8F7',
+                    'stroke-width': 0.1*scale + 'px',
                 },
                 number_line: {
                     'fill': 'black',
@@ -58,7 +59,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
             const body_width = 30*scale
             const body_height = 8*scale
             const blade_width = 14*scale
-            const blade_height = 1*scale
+            const blade_height = Math.max(1, 1*scale)
             const blade_float = 5*scale
             const arm_length = 10*scale
             const arm_width = 20*scale
@@ -71,9 +72,10 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
 
             const parts = [
                 // blade 1
-                [0, start_height, blade_width, blade_height*scale, 2*scale],
+                [0, start_height, blade_width, blade_height, 2],
                 // blade 2
-                [body_width, start_height, blade_width, 1*scale, 2*scale],
+                [body_width, start_height, blade_width, blade_height,
+                    2],
                 // body 01
                 [blade_width/2, start_height+blade_float, 
                     body_width, body_height, 2*scale],
@@ -98,7 +100,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
              * number line
              *
              *----------------------------------------------*/
-            const number_line_length = 310
+            const number_line_length = 350 - drone_center*2
             const number_scale_height = 4*scale
             const number_height = 8
 
@@ -109,8 +111,7 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                 paper.path(['M', drone_center+i*number_line_length/(points),
                     grand_height, 'l', 0, number_scale_height]).attr(
                                 attr.number_line)
-                if (points < 10 || i == 0 ||
-                    i == points || i == Math.floor(points/2)) {
+                if (points < 10 || i % 5 == 0) {
                     paper.text(
                         drone_center+i*number_line_length/(points),
                         grand_height+number_scale_height+number_height, i
@@ -245,7 +246,8 @@ requirejs(['ext_editor_io', 'jquery_190', 'raphael_210'],
                     drone_icon.animate(
                         {'transform': "t " + explanation[i]*unit + "," + 0},
                         move_speed*Math.abs(explanation[i]
-                            - (explanation[i-1] || 0))/(points+1), down)
+                            - (explanation[i-1] || 0))/(points+1), 
+                        explanation[i] > 0 ? down: ()=>{})
 
                 })()
             }
