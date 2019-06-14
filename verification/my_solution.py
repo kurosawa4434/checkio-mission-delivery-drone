@@ -8,11 +8,8 @@ def delivery_drone(orders: List[int]) -> int:
     def distance(way):
         return sum(abs(b - a) for a, b in zip((0,) + way, way))
 
-    def ways():
-        for perm in permutations(orders):
-            yield sum(perm, ()) + (0,)
-
-    min_way = min(ways(), key=distance)
+    ways = (sum(perm, ()) + (0,) for perm in permutations(orders))
+    min_way = min(ways, key=distance)
     return distance(min_way), list(min_way)
 
 
