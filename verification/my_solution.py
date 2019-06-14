@@ -1,13 +1,13 @@
 from itertools import permutations
-from typing import List
+from typing import List, Tuple
+
+
+def distance(way: Tuple[int]) -> int:
+    return sum(abs(b - a) for a, b in zip((0,) + way, way))
 
 
 def delivery_drone(orders: List[int]) -> int:
     orders = [(i, d) for i, d in enumerate(orders) if d]
-
-    def distance(way):
-        return sum(abs(b - a) for a, b in zip((0,) + way, way))
-
     ways = (sum(perm, ()) + (0,) for perm in permutations(orders))
     min_way = min(ways, key=distance)
     return distance(min_way), list(min_way)
