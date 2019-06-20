@@ -1,4 +1,4 @@
-﻿checkio-mission-boundary-blocks
+﻿checkio-mission-delivery-drone
 ===============================
 
-Another CheckiO mission: Boundary Blocks
+Another CheckiO mission: Delivery Drone
