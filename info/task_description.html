@@ -1,30 +1,30 @@
 <!-- Describe task in general -->
 
 <p>
-Today drones working in transportation. (<a href='https://en.wikipedia.org/wiki/Delivery_drone'>Delivery drone(Wikipedia)</a>)
-Let's plan efficient drone movement.
+Nowadays the drones are working in transportation. (<a href='https://en.wikipedia.org/wiki/Delivery_drone'>Delivery drone(Wikipedia)</a>)
+Let's make a plan to ensure the efficient drone movement.
 </p>
 
 <p>
 The input value is a list of integers.
-One or more number of this represent the existence of the package to be transported and its destination
+One or more numbers of this list represent the existence of the package(s) to be transported and its destination.
 You have to return the shortest moving distance for the drone to complete all transportation as an integer.
 </p>
 
 <ul>
     <li>Note:</li>
     <ul>
-        <li>The drone is initially at position 0 (most left).</li>
+        <li>The drone is initially at position 0 (far-left position).</li>
         <li>The drone can carry only one package at a time.</li>
-        <li>You can only drop a package on destination.</li>
-        <li>The drone finally <strong>returns</strong> to position 0.</li>
+        <li>You can drop the package only at the destination point.</li>
+        <li>The drone <strong>returns</strong> to position 0.</li>
     </ul>
 </ul>
 
 <!-- Put some usage examples -->
 <div class="for_info_only">
 <p>
-	<strong>Examples:</strong>
+	<strong>Example:</strong>
 </p>
 
 <pre class="brush: python">
@@ -37,7 +37,7 @@ delivery_drone([0, 0, 1, 2]) == 6
 <!-- Explain input and output values -->
 <p>
 	<strong>Input:</strong>
-The information of packages (a list of integer).
+The information about the packages (a list of integers).
 </p>
 
 <p>
